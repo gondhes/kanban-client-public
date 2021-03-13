@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,300italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./template.css">
+    <title>Kanban</title>
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="row">
+            <div class="logo-row">
+                <a href="/"><img src="src/img/kanban-logo.png" alt="Kanban Logo" class="logo"></a>
+                <ul class="main-nav">
+                    <li id="btn-logout"><a href="#"><b>Logout</b></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="new-task">
+        <input class='form' type="text" placeholder="input new task" id="new-task" name="new-task" required>
+        <button type="submit" id="btn-create">add task</button>
+    </div>
+
+    <div class="container">
+        <div class="sub-container col-3 grey"><b>Backlog</b>
+            <div class="item white">task in backlog</div>
+        </div>
+        <div class="sub-container col-3 grey"><b>Todo</b>
+            <div class="item white">task in todo</div>
+        </div>
+        <div class="sub-container col-3 grey"><b>Doing</b>
+            <div class="item white">task in doing</div>
+        </div>
+        <div class="sub-container col-3 grey"><b>Completed</b>
+            <div class="item white">task completed</div>
+        </div>
+    </div>
+
+</body>
+</html>
