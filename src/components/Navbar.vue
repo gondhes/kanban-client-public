@@ -3,9 +3,6 @@
         <div class="row">
             <div class="logo-row">
                 <a href="/"><img src="../img/kanban-logo.png" alt="Kanban Logo" class="logo"></a>
-                <ul class="main-nav">
-                    <li id="btn-logout"><a href="#"><b>Logout</b></a></li>
-                </ul>
             </div>
         </div>
     </header>
@@ -29,42 +26,4 @@ export default {
     text-align: left;
     margin-left: 50px;
 }
-
-.main-nav {
-    margin-top: 35px;
-    float: right;
-    list-style: none;
-    margin-right: 50px;
-}
-  
-.main-nav li {
-    display: inline-block;
-    margin-left: 40px;
-    
-}
-  
-.main-nav li a:link,
-.main-nav li a:visited {
-    padding: 8px 0;
-    color: #fff;
-    text-decoration: none;
-    font-size: 90%;
-    font-weight: 400;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.2s;
-}
-  
-.main-nav li a:hover,
-.main-nav li a:active {
-    border-bottom: 2px solid #2487c9;
-}
-
-.form {
-    border-radius: 12px;
-    border: 2px solid #73AD21;
-    padding: 15px;
-    width: 400px;
-    height: 15px;
-}
-
 </style>

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Logout></Logout>
         <Navbar></Navbar>
         <NewTask></NewTask>
         <Category></Category>
@@ -9,22 +10,23 @@
 </template>
 
 <script>
+import Logout from '../components/LogoutNav'
 import Navbar from '../components/Navbar'
 import NewTask from '../components/NewTask'
 import Category from '../components/Category'
-
 
 export default {
   components: {
       Navbar,
       NewTask,
-      Category
+      Category,
+      Logout
   }
 };
 </script>
 
 <style>
-    * {
+* {
     margin: 20px 5px;
     padding: 0; 
     max-width: 100%;   

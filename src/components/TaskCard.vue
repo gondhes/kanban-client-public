@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style>
-  .item {
+.item {
     padding: 5px;
     min-height: 20px;
     border-radius: 5px;
