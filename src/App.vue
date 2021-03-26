@@ -1,12 +1,14 @@
 <template>
 <div>
-  <Login v-if="!isLogin" @emitLogin='login'></Login>
+  <Login v-if="!isLogin" @emitLogin='login' @googleLogin="googleLogin"></Login>
   <Home v-if="isLogin"></Home>
   <!-- <Register></Register> -->
 </div>
 </template>
 
 <script>
+const baseURL = 'http://localhost:3000'
+// const baseURL = 'https://damp-shelf-32025.herokuapp.com/'
 import Login from './views/Login'
 import Home from './views/Home'
 import Register from './views/Register'
@@ -36,15 +38,34 @@ export default {
     login(email, password) {
       axios({
         method: 'POST',
-        url: 'http://localhost:3000/login',
+        url: baseURL + '/login',
         data: {
             email,
             password
         }
       })
-      .then(response => {
-        localStorage.setItem('access_token', response.access_token)
-        localStorage.setItem('userId', response.id)
+      .then((response) => {
+        localStorage.setItem('access_token', response.data.access_token)
+        localStorage.setItem('userId', response.data.id)
+        this.isLogin = true
+      })
+      .catch(err => {
+        this.errorMsg = 'Invalid email/password'
+        this.isLogin = false
+      })
+    },
+    googleLogin(obj) {
+      const token = obj.getAuthResponse().id_token;
+      axios({
+        method: 'POST',
+        url: baseURL + '/googleLogin',
+        data: {
+            access_token : token
+        }
+      })
+      .then((response) => {
+        localStorage.setItem('access_token', response.data.access_token)
+        localStorage.setItem('userId', response.data.id)
         this.isLogin = true
       })
       .catch(err => {
@@ -55,7 +76,7 @@ export default {
     fetchTask() {
       axios({
         method: 'GET',
-        url: 'http://localhost:3000/tasks'
+        url: baseURL + '/tasks'
       })
       .then(response => {
         this.tasks = response.data
